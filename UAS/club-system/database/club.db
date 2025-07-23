@@ -1,0 +1,13 @@
+CREATE TABLE club (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nama VARCHAR(100),
+    logo VARCHAR(255)
+);
+
+CREATE TABLE pemain (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    club_id INT,
+    nama_enkripsi TEXT,
+    key_hash TEXT,
+    FOREIGN KEY (club_id) REFERENCES club(id)
+);
